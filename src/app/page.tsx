@@ -1,10 +1,10 @@
 // import Image from "next/image";
-import Header from './header/Header';
-import Footer from './footer/Footer';
-import Hero from './hero-section/Hero';
-import TechStack from './tech-stack-section/TechStack';
-import Projects from './projects-section/Projects';
-import Contact from './contact-section/Contact';
+import Header from '@/components/sections/Header';
+import Footer from '@/components/sections/Footer';
+import Hero from '@/components/sections/Hero';
+import TechStack from '@/components/sections/TechStack';
+import Projects from '@/components/sections/Projects';
+import Contact from '@/components/sections/Contact';
 
 // function OldHome() {
 //   return (

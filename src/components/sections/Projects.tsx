@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { projects, ProjectCardData } from './project-data';
+import { projects, ProjectCardData } from '@/lib/project-data';
 
 interface ProjectCardProps {
   data: ProjectCardData;
