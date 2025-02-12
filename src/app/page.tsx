@@ -1,10 +1,10 @@
 // import Image from "next/image";
-import Header from "./header/Header";
-import Footer from "./footer/Footer";
-import Hero from "./hero-section/Hero";
-import TechStack from "./tech-stack-section/TechStack";
-import Projects from "./projects-section/Projects";
-import Contact from "./contact-section/Contact";
+import Header from './header/Header';
+import Footer from './footer/Footer';
+import Hero from './hero-section/Hero';
+import TechStack from './tech-stack-section/TechStack';
+import Projects from './projects-section/Projects';
+import Contact from './contact-section/Contact';
 
 // function OldHome() {
 //   return (
@@ -109,14 +109,14 @@ import Contact from "./contact-section/Contact";
 export default function Home() {
   return (
     <>
-      <Header/>
+      <Header />
       <main>
-        <Hero/>
-        <TechStack/>
-        <Projects/>
-        <Contact/>
+        <Hero />
+        <TechStack />
+        <Projects />
+        <Contact />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

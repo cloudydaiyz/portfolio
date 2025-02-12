@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -10,8 +10,12 @@ export default function Footer() {
             <label>Explore</label>
             <nav>
               <ul>
-                <li><Link href={"/"}>Portfolio</Link></li>
-                <li><a href="https://cloudydaiyz.hashnode.dev/">Blog</a></li>
+                <li>
+                  <Link href={'/'}>Portfolio</Link>
+                </li>
+                <li>
+                  <a href='https://cloudydaiyz.hashnode.dev/'>Blog</a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -19,13 +23,17 @@ export default function Footer() {
             <label>Socials</label>
             <nav>
               <ul>
-                <li><a href="https://linkedin.com/in/kylan-duncan">LinkedIn</a></li>
-                <li><a href="https://github.com/cloudydaiyz">GitHub</a></li>
+                <li>
+                  <a href='https://linkedin.com/in/kylan-duncan'>LinkedIn</a>
+                </li>
+                <li>
+                  <a href='https://github.com/cloudydaiyz'>GitHub</a>
+                </li>
               </ul>
             </nav>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
