@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { projects, ProjectCardData } from '@/lib/project-data';
+import { projects, ProjectCardData, ProjectLinkToImageMap } from '@/lib/project-data';
+import Link from 'next/link';
 
 interface ProjectCardProps {
   data: ProjectCardData;
@@ -9,12 +10,25 @@ interface ProjectCardProps {
 function ProjectCard({ data, selectedLink }: ProjectCardProps) {
   const techUsed = data.techUsed.map(skill => <li key={skill}>{skill}</li>);
   if (selectedLink) {
+    console.log('link selected: ', data.title, selectedLink);
   }
+
+  const links = Object.keys(data.links).map(link => {
+    const validLink = link as keyof typeof data.links;
+    if (!data.links[validLink]) return null;
+    return (
+      <button key={link}>
+        <Link href={data.links[validLink]} target='_blank'>
+          <Image src={ProjectLinkToImageMap[validLink]} alt={data.title} />
+        </Link>
+      </button>
+    );
+  });
 
   return (
     <article>
       <div>
-        <Image src={data.img} alt={data.title} />
+        <Image src={data.img} alt={data.title} className='w-[500px] rounded-2xl' />
         <ul>{techUsed}</ul>
       </div>
       <div>
@@ -22,14 +36,7 @@ function ProjectCard({ data, selectedLink }: ProjectCardProps) {
         <p>{data.description}</p>
         <label>Documentation</label>
         <p>Click again to visit the page.</p>
-        <div>
-          {/* foreach data.links */}
-          <button>
-            <a href='#'>
-              <Image src={''} alt={data.title} />
-            </a>
-          </button>
-        </div>
+        <div>{links}</div>
       </div>
     </article>
   );

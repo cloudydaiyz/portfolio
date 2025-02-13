@@ -4,4 +4,14 @@
 //  - if top: position y = 0 + offset
 //  - if bottom: position y = -900 - offset (height of the bg minus offset)
 
-export default function Background() {}
+// className='bg-[url(/bg-pattern.svg)] bg-repeat'
+
+interface BackgroundProps {
+  top?: boolean;
+}
+
+export default function Background({ top }: BackgroundProps) {
+  if (top) {
+  }
+  return <></>;
+}

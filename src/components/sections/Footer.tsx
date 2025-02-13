@@ -11,10 +11,14 @@ export default function Footer() {
             <nav>
               <ul>
                 <li>
-                  <Link href={'/'}>Portfolio</Link>
+                  <Link href={'/'} target='_self'>
+                    Portfolio
+                  </Link>
                 </li>
                 <li>
-                  <a href='https://cloudydaiyz.hashnode.dev/'>Blog</a>
+                  <a href='https://cloudydaiyz.hashnode.dev/' target='_blank'>
+                    Blog
+                  </a>
                 </li>
               </ul>
             </nav>
@@ -24,10 +28,14 @@ export default function Footer() {
             <nav>
               <ul>
                 <li>
-                  <a href='https://linkedin.com/in/kylan-duncan'>LinkedIn</a>
+                  <a href='https://linkedin.com/in/kylan-duncan' target='_blank'>
+                    LinkedIn
+                  </a>
                 </li>
                 <li>
-                  <a href='https://github.com/cloudydaiyz'>GitHub</a>
+                  <a href='https://github.com/cloudydaiyz' target='_blank'>
+                    GitHub
+                  </a>
                 </li>
               </ul>
             </nav>

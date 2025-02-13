@@ -1,19 +1,34 @@
+import stringplay from '@public/stringplay-og.png';
+import qapup from '@public/qapup-og.png';
+import crc from '@public/crc-og.png';
+
+import github from '@/assets/projects-section/github.svg';
+import live from '@/assets/projects-section/link.svg';
+import newsletter from '@/assets/projects-section/newspaper.svg';
+import documentation from '@/assets/projects-section/document.svg';
+
+export type LinkType = 'live' | 'github' | 'newsletter' | 'documentation';
+
 export interface ProjectCardData {
   title: string;
-  img: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  img: any;
   description: string;
   techUsed: string[];
-  links: {
-    live?: string;
-    github?: string;
-    newsletter?: string;
-    documentation?: string;
-  };
+  links: Record<LinkType, string | undefined>;
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const ProjectLinkToImageMap: Record<LinkType, any> = {
+  live: live,
+  github: github,
+  newsletter: newsletter,
+  documentation: documentation,
+};
 
 export const Stringplay = {
   title: 'stringplay',
-  img: '',
+  img: stringplay,
   description:
     'A data collection service that aggregates attendee information from your online spreadsheets and surveys, allowing you to efficiently track unique respondents.',
   techUsed: ['MongoDB', 'Node.js', 'React.js', 'AWS'],
@@ -27,7 +42,7 @@ export const Stringplay = {
 
 export const QAPup = {
   title: 'QA Pup',
-  img: '',
+  img: qapup,
   description:
     'A serverless QA testing application that scans HackerNews/newest to test web vitals, accessibility, and whether articles are correctly sorted.',
   techUsed: ['MongoDB', 'Node.js', 'React.js', 'Docker', 'AWS'],
@@ -41,7 +56,7 @@ export const QAPup = {
 
 export const CrcPortfolio = {
   title: 'Cloud Resume Challenge',
-  img: '',
+  img: crc,
   description:
     'My old portfolio, which was a submission to the cloud resume challenge. It uses AWS Lambda + DynamoDB to display the number of website visitors.',
   techUsed: ['HTML', 'CSS', 'JavaScript', 'DynamoDB', 'AWS'],

@@ -1,4 +1,8 @@
+import envelope from '@/assets/contact-section/envelope.svg';
+// import calendar from '@/assets/contact-section/calendar.svg';
+
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Contact() {
   return (
@@ -11,10 +15,10 @@ export default function Contact() {
       <ul>
         {/* foreach contact method */}
         <li>
-          <a href=''>
-            <Image src={''} alt='' />
+          <Link href='mailto:kyland03.biz@gmail.com'>
+            <Image src={envelope} alt='' />
             <p>Email me</p>
-          </a>
+          </Link>
         </li>
       </ul>
     </section>

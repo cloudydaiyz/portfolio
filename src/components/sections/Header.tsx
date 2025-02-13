@@ -1,17 +1,25 @@
+import Link from 'next/link';
+
 export default function Header() {
   return (
-    <header>
+    <header className='hidden'>
       <h2>cloudydaiyz</h2>
       <nav>
         <ul>
           <li>
-            <a href='#about-me'>About Me</a>
+            <Link href='#about-me' target='_self'>
+              About Me
+            </Link>
           </li>
           <li>
-            <a href='#projects'>Projects</a>
+            <Link href='#projects' target='_self'>
+              Projects
+            </Link>
           </li>
           <li>
-            <a href='#contact'>Contact</a>
+            <Link href='#contact' target='_self'>
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>
