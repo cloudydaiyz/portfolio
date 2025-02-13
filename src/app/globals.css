@@ -21,3 +21,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } 
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer components {
+  .glow {
+    filter: drop-shadow(0 0 20px #484848);
+  }
+
+  .highlight-border-top {
+    border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #FFFFFF 50%, rgba(0, 0, 0, 0) 100%) 1;
+    border-style: solid;
+    border-top-width: 1px;
+  }
+}

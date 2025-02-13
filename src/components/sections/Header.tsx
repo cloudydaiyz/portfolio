@@ -3,7 +3,11 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <header className='hidden'>
-      <h2>cloudydaiyz</h2>
+      <h2>
+        <Link href='/' target='_self'>
+          cloudydaiyz
+        </Link>
+      </h2>
       <nav>
         <ul>
           <li>

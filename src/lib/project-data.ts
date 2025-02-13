@@ -69,4 +69,4 @@ export const CrcPortfolio = {
   },
 } satisfies ProjectCardData;
 
-export const projects: ProjectCardData[] = [Stringplay, QAPup, CrcPortfolio];
+export const projects = [Stringplay, QAPup, CrcPortfolio] as const satisfies ProjectCardData[];

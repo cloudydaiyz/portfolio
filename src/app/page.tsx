@@ -13,7 +13,7 @@ export default function Home() {
         <Background top />
         <Header />
       </div>
-      <main className='flex flex-col items-center gap-32'>
+      <main className='flex w-[100vw] flex-col items-center gap-20'>
         <Hero />
         <TechStack />
         <Projects />
