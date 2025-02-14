@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className='highlight-border-top bg-black'>
+    <footer className='highlight-border border-t-[1px] bg-black'>
       <div className='flex justify-between px-24 pb-12 pt-4'>
         <p className='font-[family-name:--font-oswald] text-lg'>Copyright © 2025 Kylan Duncan. All rights reserved.</p>
         <div className='flex gap-24'>

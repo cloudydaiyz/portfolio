@@ -105,7 +105,7 @@ function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: Projec
 
   let selectedLinkLabel = 'No link selected';
   const selectedLinkLabelClasses = ['text-lg', 'font-bold', 'font-[family-name:--font-oswald]', 'opacity-0'];
-  const selectedLinkTooltipClasses = ['mb-2', 'opacity-0'];
+  const selectedLinkTooltipClasses = ['pointer-events-none', 'mb-2', 'opacity-0'];
   if (selectedLink) {
     selectedLinkLabel = selectedLinkLabels[selectedLink];
     selectedLinkLabelClasses.pop();
@@ -116,7 +116,7 @@ function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: Projec
   const sltc = selectedLinkTooltipClasses.join(' ');
 
   return (
-    <article className='mb-10 flex gap-20 rounded-[64px] bg-[#101217] px-32 py-20 even:flex-row-reverse'>
+    <article className='lifted mb-10 flex gap-20 rounded-[64px] bg-[#101217] px-32 py-20 even:flex-row-reverse'>
       <div>
         <div className='mb-4 w-[500px]'>
           <Image src={data.img} alt={data.title} className='rounded-2xl' />
@@ -162,7 +162,7 @@ export default function Projects() {
   ));
 
   return (
-    <section id='projects' className='flex max-w-[100vw] flex-col items-center px-32'>
+    <section id='projects' className='flex max-w-[100vw] flex-col items-center px-32 pt-20'>
       <Heading className='mb-10'>PROJECTS</Heading>
       <div className='flex flex-col items-center'>{cards}</div>
     </section>

@@ -15,23 +15,23 @@ export default function Contact() {
       </p>
       <ul className='flex flex-col gap-4'>
         {/* foreach contact method */}
-        <li>
+        <li className='flex items-center justify-center'>
           <Link href='mailto:kyland03.biz@gmail.com'>
-            <div className='flex items-center justify-center gap-1 rounded-lg bg-white px-5 py-1'>
-              <div className='flex h-[30px] w-[30px] items-center justify-center'>
+            <div className='hover:glow-sm lifted-sm flex items-center justify-center gap-1 rounded-lg bg-white px-5 py-1 transition-all duration-300 hover:scale-105'>
+              <div className='relative top-[1px] flex h-[30px] w-[30px] items-center justify-center'>
                 <Svg.Envelope className='size-full fill-black' />
               </div>
-              <p className='text-[20px] font-bold text-black'>Email me</p>
+              <p className='font-[family-name:--font-oswald] text-[24px] font-bold text-black'>EMAIL ME</p>
             </div>
           </Link>
         </li>
-        <li>
+        <li className='flex items-center justify-center'>
           <Link href='https://linkedin.com/in/kylan-duncan' target='_blank'>
-            <div className='flex items-center justify-center gap-1 rounded-lg bg-white px-5 py-1'>
-              <div className='flex h-[30px] w-[30px] items-center justify-center'>
+            <div className='hover:glow-sm lifted-sm flex items-center justify-center gap-1 rounded-lg bg-white px-5 py-1 transition-all duration-300 hover:scale-105'>
+              <div className='relative top-[1px] flex h-[30px] w-[30px] items-center justify-center'>
                 <Svg.LinkedIn className='size-full fill-black' />
               </div>
-              <p className='text-[20px] font-bold text-black'>Connect with me</p>
+              <p className='font-[family-name:--font-oswald] text-[24px] font-bold text-black'>CONNECT WITH ME</p>
             </div>
           </Link>
         </li>

@@ -24,17 +24,17 @@ export default function Hero() {
         <nav>
           <ul className='flex gap-5 text-[20px]'>
             <li>
-              <Link href='#about-me' target='_self'>
+              <Link href='#about-me' target='_self' className='hover:text-[#E8D2AA]'>
                 About Me
               </Link>
             </li>
             <li>
-              <Link href='#projects' target='_self'>
+              <Link href='#projects' target='_self' className='hover:text-[#E8D2AA]'>
                 Projects
               </Link>
             </li>
             <li>
-              <Link href='#contact' target='_self'>
+              <Link href='#contact' target='_self' className='hover:text-[#E8D2AA]'>
                 Contact
               </Link>
             </li>
@@ -45,7 +45,7 @@ export default function Hero() {
         <h1 className='mb-20 mt-10 flex flex-col items-center font-[family-name:--font-oswald] leading-none tracking-tighter'>
           <span className='text-[50px]'>Hello, I am</span>
           {/* #484848 */}
-          <span className='glow bg-gradient-to-b from-[#FFFFFF] to-[#E8D2AA] bg-clip-text text-[100px] font-bold text-transparent'>
+          <span className='hover:glow-lg glow bg-gradient-to-b from-[#FFFFFF] to-[#E8D2AA] bg-clip-text text-[100px] font-bold text-transparent transition-all duration-500'>
             KYLAN DUNCAN
           </span>
         </h1>
@@ -57,7 +57,7 @@ export default function Hero() {
             priority
           />
           <div className='flex max-w-[600px] flex-col items-center justify-center gap-4'>
-            <div className='glow relative z-0 rounded-xl bg-gradient-to-b from-[#E8D2AA] to-[#8D7E63] p-1'>
+            <div className='hover:glow glow-sm relative z-0 rounded-xl bg-gradient-to-b from-[#E8D2AA] to-[#8D7E63] p-1 transition-all duration-500'>
               <Svg.User className='size-[48px] fill-white' />
             </div>
             <Heading>ABOUT ME</Heading>
@@ -69,7 +69,7 @@ export default function Hero() {
             <Link
               href={'#contact'}
               target='_self'
-              className='rounded-xl bg-white px-8 py-2 text-[22px] font-extrabold leading-[1.1] text-black'
+              className='hover:glow-sm lifted-sm rounded-xl bg-white px-8 py-2 font-[family-name:--font-oswald] text-[24px] font-extrabold leading-[1.1] text-black transition-all duration-300 hover:scale-105'
             >
               CONTACT ME
             </Link>

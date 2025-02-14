@@ -2,26 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} 
-*/
-
 * {
   margin: 0;
   padding: 0;
@@ -29,18 +9,38 @@ body {
 }
 
 @layer components {
+  .glow-lg {
+    filter: drop-shadow(0 0 30px #484848);
+  }
+  
   .glow {
     filter: drop-shadow(0 0 20px #484848);
   }
 
-  .highlight-border-top {
+  .glow-sm {
+    filter: drop-shadow(0 0 8px #484848);
+  }
+
+  .lifted {
+    box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .lifted-sm {
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.35);
+  }
+
+  .text-lifted {
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, .5);
+  }
+
+  .highlight-border {
     border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #FFFFFF 50%, rgba(0, 0, 0, 0) 100%) 1;
     border-style: solid;
-    border-top-width: 1px;
+    /* border-top-width: 1px; */
   }
 
   .proj-link {
-    transition: all .2s;
+    transition: all .3s;
   }
 
   .proj-link:hover {
@@ -52,15 +52,25 @@ body {
   }
 
   .proj-link.selected {
+    filter: drop-shadow(0 0 8px #484848);
     scale: 1.15;
   }
 
   .proj-link .proj-link-svg {
     fill: #969696;
-    transition: all .2s;
+    transition: all .3s;
   }
 
   .proj-link.selected .proj-link-svg, .proj-link:hover .proj-link-svg {
     fill: black;
   }
+
+  /* Small custom scroll, but generally do not do this for production websites */
+  .custom-scroll {
+    scrollbar-color: #E8D2AA #464646;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }

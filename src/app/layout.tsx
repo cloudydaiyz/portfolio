@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' className='custom-scroll'>
       <body
         className={`bg-[#1C1F28] text-white ${pathwayExtreme.variable} ${oswald.variable} font-[family-name:--font-pathway-extreme] antialiased`}
       >
