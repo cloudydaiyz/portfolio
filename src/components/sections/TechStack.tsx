@@ -1,5 +1,8 @@
 import Heading from '@/components/Heading';
 import * as Svg from '@/components/svg';
+import { useHeaderNavContext } from '@/hooks/header';
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 interface TechSkillData {
   title: string;
@@ -21,6 +24,16 @@ const techStackData: TechSkillData[] = [
 ];
 
 export default function TechStack() {
+  const headerNav = useHeaderNavContext();
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    headerNav.setTechStackVisible(inView);
+  }, [headerNav, inView]);
+
   const skills = techStackData.map(skill => (
     <span
       key={skill.title}
@@ -32,7 +45,7 @@ export default function TechStack() {
   ));
 
   return (
-    <section id='tech-stack' className='flex flex-col items-center px-32 py-20'>
+    <section ref={ref} id='tech-stack' className='flex flex-col items-center px-32 py-20'>
       <Heading className='mb-10'>TECH STACK</Heading>
       <div className='flex max-w-[calc(80px*6+4rem*6)] flex-wrap justify-center gap-x-16 gap-y-4'>{skills}</div>
     </section>

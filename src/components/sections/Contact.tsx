@@ -1,10 +1,22 @@
 import Link from 'next/link';
 import Heading from '@/components/Heading';
 import * as Svg from '@/components/svg';
+import { useHeaderNavContext } from '@/hooks/header';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 export default function Contact() {
+  const headerNav = useHeaderNavContext();
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    headerNav.setContactMeVisible(inView);
+  }, [headerNav, inView]);
+
   return (
-    <section id='contact' className='flex flex-col items-center px-32 py-[200px]'>
+    <section ref={ref} id='contact' className='flex flex-col items-center px-32 py-[200px]'>
       <Heading className='mb-10'>GET IN TOUCH</Heading>
       <p className='mb-10 text-center text-[20px]'>
         Want to get in touch?

@@ -2,9 +2,11 @@ import headshot from '@public/headshot.jpg';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Heading from '@/components/Heading';
 import * as Svg from '@/components/svg';
+import { useInView } from 'react-intersection-observer';
+import { useHeaderNavContext } from '@/hooks/header';
 
 function AboutBadge({ children }: { children: React.ReactNode }) {
   return (
@@ -13,8 +15,18 @@ function AboutBadge({ children }: { children: React.ReactNode }) {
 }
 
 export default function Hero() {
+  const headerNav = useHeaderNavContext();
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    headerNav.setHeroVisible(inView);
+  }, [headerNav, inView]);
+
   return (
-    <section id='about-me' className='min-w-screen flex min-h-screen w-full flex-col px-32'>
+    <section ref={ref} id='about-me' className='min-w-screen flex min-h-screen w-full flex-col px-32'>
       <div className='flex h-[80px] items-center justify-between font-[family-name:--font-oswald]'>
         <h2 className='text-[28px]'>
           <Link href='/' target='_self'>

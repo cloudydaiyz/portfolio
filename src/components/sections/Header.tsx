@@ -1,9 +1,26 @@
+import { useHeaderNavContext } from '@/hooks/header';
 import Link from 'next/link';
 
 export default function Header() {
-  // top-0 top-[-4rem]
+  const headerNav = useHeaderNavContext();
+
+  const hiddenNavCls = 'text-[#969696] hover:text-white';
+  const visibleNavCls = `text-white`;
+
+  let aboutMeCls = hiddenNavCls;
+  let projectsCls = hiddenNavCls;
+  let contactCls = hiddenNavCls;
+
+  if (headerNav.heroVisible || headerNav.techStackVisible) aboutMeCls = visibleNavCls;
+  else if (headerNav.projectsVisible) projectsCls = visibleNavCls;
+  else if (headerNav.contactMeVisible) contactCls = visibleNavCls;
+
+  const headerPos = headerNav.heroVisible ? 'top-[-4rem]' : 'top-0';
+
   return (
-    <header className='highlight-border fixed top-0 z-[100] flex w-full items-center justify-between border-b-[1px] bg-gradient-to-t from-black/50 to-black px-32 py-2 font-[family-name:--font-oswald] text-[18px] backdrop-blur-md'>
+    <header
+      className={`${headerPos} highlight-border fixed z-[100] flex w-full items-center justify-between border-b-[1px] bg-gradient-to-t from-black/50 to-black px-32 py-2 font-[family-name:--font-oswald] text-[18px] backdrop-blur-md transition-all duration-300`}
+    >
       <h2 className='text-[20px]'>
         <Link href='/' target='_self'>
           cloudydaiyz
@@ -12,17 +29,17 @@ export default function Header() {
       <nav>
         <ul className='flex gap-5'>
           <li>
-            <Link href='#about-me' target='_self' className='text-[#969696] hover:text-white'>
+            <Link href='#about-me' target='_self' className={aboutMeCls}>
               About Me
             </Link>
           </li>
           <li>
-            <Link href='#projects' target='_self' className='text-[#969696] hover:text-white'>
+            <Link href='#projects' target='_self' className={projectsCls}>
               Projects
             </Link>
           </li>
           <li>
-            <Link href='#contact' target='_self' className='text-[#969696] hover:text-white'>
+            <Link href='#contact' target='_self' className={contactCls}>
               Contact
             </Link>
           </li>

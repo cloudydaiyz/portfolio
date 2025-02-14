@@ -1,12 +1,12 @@
-'use client';
-
 import { projects, ProjectCardData, LinkType } from '@/lib/project-data';
 import Heading from '@/components/Heading';
 import * as Svg from '@/components/svg';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { useHeaderNavContext } from '@/hooks/header';
 
 /*
  * Time in seconds selected link can be idle before resetting.
@@ -138,6 +138,15 @@ function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: Projec
 
 export default function Projects() {
   const [state, dispatch] = useReducer(updateSelectedLink, undefined);
+  const headerNav = useHeaderNavContext();
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0.3,
+  });
+
+  useEffect(() => {
+    headerNav.setProjectsVisible(inView);
+  }, [headerNav, inView]);
 
   const onLinkClick = (index: number, link: LinkType) => {
     dispatch({ action: 'update', args: [index, link] });
@@ -162,7 +171,7 @@ export default function Projects() {
   ));
 
   return (
-    <section id='projects' className='flex max-w-[100vw] flex-col items-center px-32 pt-20'>
+    <section ref={ref} id='projects' className='flex max-w-[100vw] flex-col items-center px-32 pt-20'>
       <Heading className='mb-10'>PROJECTS</Heading>
       <div className='flex flex-col items-center'>{cards}</div>
     </section>
