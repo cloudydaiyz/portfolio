@@ -61,7 +61,7 @@ export default function Hero() {
           />
           <div className='flex max-w-[600px] flex-col items-center justify-center gap-4'>
             <div className='glow relative z-0 rounded-xl bg-gradient-to-b from-[#E8D2AA] to-[#8D7E63] p-1'>
-              <Image src={user} alt='Person icon' className='h-[48px] w-[48px]' />
+              <Image src={user} alt='Person icon' className='color-green-400 h-[48px] w-[48px] fill-green-400' />
             </div>
             <Heading>ABOUT ME</Heading>
             <p className='text-center text-[20px] leading-[1.1]'>

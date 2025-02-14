@@ -10,7 +10,9 @@ export default function Contact() {
     <section id='contact' className='flex flex-col items-center px-32 py-[200px]'>
       <Heading className='mb-10'>GET IN TOUCH</Heading>
       <p className='mb-10 text-center text-[20px]'>
-        Want to get in touch? The quickest way to get in contact with me is through email or setting up a meeting.
+        Want to get in touch?
+        <br />
+        The quickest way to get in contact with me is through email or setting up a meeting.
         <br />
         I&apos;m always open to discussing new opportunities!
       </p>

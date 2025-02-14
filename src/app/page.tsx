@@ -9,7 +9,7 @@ import Background from '@/components/Background';
 export default function Home() {
   return (
     <>
-      <div>
+      <div className='relative'>
         <Background top />
         <Header />
       </div>
@@ -19,7 +19,7 @@ export default function Home() {
         <Projects />
         <Contact />
       </main>
-      <div>
+      <div className='relative'>
         <Background />
         <Footer />
       </div>
