@@ -11,12 +11,16 @@ export default function Footer() {
             <nav>
               <ul>
                 <li>
-                  <Link href={'/'} target='_self'>
+                  <Link href={'/'} target='_self' className='text-[#969696] hover:text-white'>
                     Portfolio
                   </Link>
                 </li>
                 <li>
-                  <a href='https://cloudydaiyz.hashnode.dev/' target='_blank'>
+                  <a
+                    href='https://cloudydaiyz.hashnode.dev/'
+                    target='_blank'
+                    className='text-[#969696] hover:text-white'
+                  >
                     Blog
                   </a>
                 </li>
@@ -28,12 +32,16 @@ export default function Footer() {
             <nav>
               <ul>
                 <li>
-                  <a href='https://linkedin.com/in/kylan-duncan' target='_blank'>
+                  <a
+                    href='https://linkedin.com/in/kylan-duncan'
+                    target='_blank'
+                    className='text-[#969696] hover:text-white'
+                  >
                     LinkedIn
                   </a>
                 </li>
                 <li>
-                  <a href='https://github.com/cloudydaiyz' target='_blank'>
+                  <a href='https://github.com/cloudydaiyz' target='_blank' className='text-[#969696] hover:text-white'>
                     GitHub
                   </a>
                 </li>

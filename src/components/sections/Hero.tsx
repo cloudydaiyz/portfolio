@@ -1,13 +1,10 @@
 import headshot from '@public/headshot.jpg';
-import user from '@/assets/hero-section/user.svg';
-import home from '@/assets/hero-section/home.svg';
-import globe from '@/assets/hero-section/globe-america.svg';
-import briefcase from '@/assets/hero-section/briefcase.svg';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import Heading from '@/components/Heading';
+import * as Svg from '@/components/svg';
 
 function AboutBadge({ children }: { children: React.ReactNode }) {
   return (
@@ -61,7 +58,7 @@ export default function Hero() {
           />
           <div className='flex max-w-[600px] flex-col items-center justify-center gap-4'>
             <div className='glow relative z-0 rounded-xl bg-gradient-to-b from-[#E8D2AA] to-[#8D7E63] p-1'>
-              <Image src={user} alt='Person icon' className='color-green-400 h-[48px] w-[48px] fill-green-400' />
+              <Svg.User className='size-[48px] fill-white' />
             </div>
             <Heading>ABOUT ME</Heading>
             <p className='text-center text-[20px] leading-[1.1]'>
@@ -72,7 +69,7 @@ export default function Hero() {
             <Link
               href={'#contact'}
               target='_self'
-              className='rounded-2xl bg-white px-8 py-4 font-[family-name:--font-oswald] text-[20px] font-bold leading-[1.1] text-black'
+              className='rounded-xl bg-white px-8 py-2 text-[22px] font-extrabold leading-[1.1] text-black'
             >
               CONTACT ME
             </Link>
@@ -81,7 +78,7 @@ export default function Hero() {
         <ul className='flex justify-center gap-4'>
           <AboutBadge>
             <div className='h-[24px] w-[24px]'>
-              <Image src={home} alt='Hometown icon' />
+              <Svg.Home className='size-full fill-white' />
             </div>
             <p>
               <strong>From: </strong>Houston, TX
@@ -89,7 +86,7 @@ export default function Hero() {
           </AboutBadge>
           <AboutBadge>
             <div className='h-[24px] w-[24px]'>
-              <Image src={globe} alt='Work location icon' />
+              <Svg.GlobeAmerica className='size-full fill-white' />
             </div>
             <p>
               <strong>Work Location: </strong>Remote
@@ -97,7 +94,7 @@ export default function Hero() {
           </AboutBadge>
           <AboutBadge>
             <div className='h-[24px] w-[24px]'>
-              <Image src={briefcase} alt='Work availability icon' />
+              <Svg.Briefcase className='size-full fill-white' />
             </div>
             <p>Currently Available for Work</p>
           </AboutBadge>

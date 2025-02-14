@@ -38,4 +38,29 @@ body {
     border-style: solid;
     border-top-width: 1px;
   }
+
+  .proj-link {
+    transition: all .2s;
+  }
+
+  .proj-link:hover {
+    scale: 1.1;
+  }
+  
+  .proj-link.selected:hover {
+    scale: 1.25;
+  }
+
+  .proj-link.selected {
+    scale: 1.15;
+  }
+
+  .proj-link .proj-link-svg {
+    fill: #969696;
+    transition: all .2s;
+  }
+
+  .proj-link.selected .proj-link-svg, .proj-link:hover .proj-link-svg {
+    fill: black;
+  }
 }

@@ -1,44 +1,29 @@
-import node from '@/assets/tech-stack-section/nodejs.svg';
-import bash from '@/assets/tech-stack-section/bash.svg';
-import html5 from '@/assets/tech-stack-section/html5.svg';
-import css3 from '@/assets/tech-stack-section/css3.svg';
-import javascript from '@/assets/tech-stack-section/javascript.svg';
-import react from '@/assets/tech-stack-section/react.svg';
-import next from '@/assets/tech-stack-section/nextjs.svg';
-import mongodb from '@/assets/tech-stack-section/mongodb.svg';
-import terraform from '@/assets/tech-stack-section/terraform.svg';
-import docker from '@/assets/tech-stack-section/docker.svg';
-import aws from '@/assets/tech-stack-section/aws.svg';
-
 import Heading from '@/components/Heading';
-import Image from 'next/image';
+import * as Svg from '@/components/svg';
 
 interface TechSkillData {
   title: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  asset: any;
+  asset: React.ReactNode;
 }
 
 const techStackData: TechSkillData[] = [
-  { title: 'Node.js', asset: node },
-  { title: 'Bash', asset: bash },
-  { title: 'HTML5', asset: html5 },
-  { title: 'CSS3', asset: css3 },
-  { title: 'JavaScript', asset: javascript },
-  { title: 'React.js', asset: react },
-  { title: 'Next.js', asset: next },
-  { title: 'MongoDB', asset: mongodb },
-  { title: 'Terraform', asset: terraform },
-  { title: 'Docker', asset: docker },
-  { title: 'AWS', asset: aws },
+  { title: 'Node.js', asset: <Svg.Nodejs className='size-full fill-white' /> },
+  { title: 'Bash', asset: <Svg.Bash className='size-full fill-white' /> },
+  { title: 'HTML5', asset: <Svg.Html5 className='size-full fill-white' /> },
+  { title: 'CSS3', asset: <Svg.Css3 className='size-full fill-white' /> },
+  { title: 'JavaScript', asset: <Svg.Javascript className='size-full fill-white' /> },
+  { title: 'React.js', asset: <Svg.React className='size-full fill-white' /> },
+  { title: 'Next.js', asset: <Svg.Nextjs className='size-full fill-white' /> },
+  { title: 'MongoDB', asset: <Svg.Mongodb className='size-full fill-white' /> },
+  { title: 'Terraform', asset: <Svg.Terraform className='size-full fill-white' /> },
+  { title: 'Docker', asset: <Svg.Docker className='size-full fill-white' /> },
+  { title: 'AWS', asset: <Svg.Aws className='size-full fill-white' /> },
 ];
 
 export default function TechStack() {
   const skills = techStackData.map(skill => (
     <span key={skill.title} className='flex flex-col items-center self-center'>
-      <div className='mb-2 h-[80px] w-[80px]'>
-        <Image src={skill.asset} alt={skill.title} className='size-full' />
-      </div>
+      <div className='mb-2 h-[80px] w-[80px]'>{skill.asset}</div>
       <label className='text-base'>{skill.title}</label>
     </span>
   ));

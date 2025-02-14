@@ -2,11 +2,6 @@ import stringplay from '@public/stringplay-og.png';
 import qapup from '@public/qapup-og.png';
 import crc from '@public/crc-og.png';
 
-import github from '@/assets/projects-section/github.svg';
-import live from '@/assets/projects-section/link.svg';
-import newsletter from '@/assets/projects-section/newspaper.svg';
-import documentation from '@/assets/projects-section/document.svg';
-
 export type LinkType = 'live' | 'github' | 'newsletter' | 'documentation';
 
 export interface ProjectCardData {
@@ -17,14 +12,6 @@ export interface ProjectCardData {
   techUsed: string[];
   links: Record<LinkType, string | undefined>;
 }
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const ProjectLinkToImageMap: Record<LinkType, any> = {
-  live: live,
-  github: github,
-  newsletter: newsletter,
-  documentation: documentation,
-};
 
 export const Stringplay = {
   title: 'stringplay',

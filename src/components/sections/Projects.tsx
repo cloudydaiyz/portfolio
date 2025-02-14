@@ -1,7 +1,8 @@
 'use client';
 
-import { projects, ProjectCardData, ProjectLinkToImageMap, LinkType } from '@/lib/project-data';
+import { projects, ProjectCardData, LinkType } from '@/lib/project-data';
 import Heading from '@/components/Heading';
+import * as Svg from '@/components/svg';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -59,29 +60,32 @@ function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: Projec
     console.debug('link selected: ', data.title, selectedLink);
   }
 
-  let selectedLinkLabel = 'No link selected';
-  const selectedLinkLabelClasses = ['text-lg', 'font-bold', 'font-[family-name:--font-oswald]', 'opacity-0'];
-  const selectedLinkTooltipClasses = ['opacity-0'];
-  if (selectedLink) {
-    selectedLinkLabel = selectedLinkLabels[selectedLink];
-    selectedLinkLabelClasses.pop();
-    selectedLinkTooltipClasses.pop();
-  }
-
-  const sllc = selectedLinkLabelClasses.join(' ');
-  const sltc = selectedLinkTooltipClasses.join(' ');
-
   const links = Object.keys(data.links).map(link => {
     const projLink = link as keyof typeof data.links;
     if (!data.links[projLink]) return null;
 
+    let divClass = 'proj-link relative flex size-[52px] items-center justify-center rounded-full bg-white ';
     let btnClass = 'absolute left-0 top-0 z-10 size-full ';
     if (projLink == selectedLink) {
+      // divClass += 'scale-[1.15]';
+      divClass += 'selected';
       btnClass += 'hidden';
     }
 
+    const svg =
+      projLink == 'newsletter' ? (
+        // <Svg.Newspaper className='size-full fill-[#969696] hover:fill-black' />
+        <Svg.Newspaper className='proj-link-svg size-full fill-black' />
+      ) : projLink == 'documentation' ? (
+        <Svg.Document className='proj-link-svg size-full fill-black' />
+      ) : projLink == 'github' ? (
+        <Svg.Github className='proj-link-svg size-full fill-black' />
+      ) : (
+        <Svg.Link className='proj-link-svg size-full fill-black' />
+      );
+
     return (
-      <div key={link} className='relative flex size-[64px] items-center justify-center'>
+      <div key={link} className={divClass}>
         <div className='size-[40px]'>
           <Link
             href={data.links[projLink]}
@@ -89,7 +93,7 @@ function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: Projec
             className='relative z-0'
             onClick={() => onLinkNavigate(projLink)}
           >
-            <Image src={ProjectLinkToImageMap[projLink]} alt={data.title} className='size-full fill-white' />
+            {svg}
           </Link>
         </div>
         <button className={btnClass} onClick={() => onLinkClick(projLink)}>
@@ -98,6 +102,18 @@ function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: Projec
       </div>
     );
   });
+
+  let selectedLinkLabel = 'No link selected';
+  const selectedLinkLabelClasses = ['text-lg', 'font-bold', 'font-[family-name:--font-oswald]', 'opacity-0'];
+  const selectedLinkTooltipClasses = ['mb-2', 'opacity-0'];
+  if (selectedLink) {
+    selectedLinkLabel = selectedLinkLabels[selectedLink];
+    selectedLinkLabelClasses.pop();
+    selectedLinkTooltipClasses.pop();
+  }
+
+  const sllc = selectedLinkLabelClasses.join(' ');
+  const sltc = selectedLinkTooltipClasses.join(' ');
 
   return (
     <article className='mb-10 flex gap-20 rounded-[64px] bg-[#101217] px-32 py-20 even:flex-row-reverse'>

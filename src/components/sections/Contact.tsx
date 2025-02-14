@@ -1,9 +1,6 @@
-import envelope from '@/assets/contact-section/envelope.svg';
-// import calendar from '@/assets/contact-section/calendar.svg';
-
-import Image from 'next/image';
 import Link from 'next/link';
 import Heading from '@/components/Heading';
+import * as Svg from '@/components/svg';
 
 export default function Contact() {
   return (
@@ -16,15 +13,25 @@ export default function Contact() {
         <br />
         I&apos;m always open to discussing new opportunities!
       </p>
-      <ul>
+      <ul className='flex flex-col gap-4'>
         {/* foreach contact method */}
         <li>
           <Link href='mailto:kyland03.biz@gmail.com'>
-            <div className='flex items-center justify-center gap-1 rounded-lg bg-white bg-opacity-10 px-5 py-1'>
+            <div className='flex items-center justify-center gap-1 rounded-lg bg-white px-5 py-1'>
               <div className='flex h-[30px] w-[30px] items-center justify-center'>
-                <Image src={envelope} alt='Email icon' className='size-full' />
+                <Svg.Envelope className='size-full fill-black' />
               </div>
-              <p className='text-[20px]'>Email me</p>
+              <p className='text-[20px] font-bold text-black'>Email me</p>
+            </div>
+          </Link>
+        </li>
+        <li>
+          <Link href='https://linkedin.com/in/kylan-duncan' target='_blank'>
+            <div className='flex items-center justify-center gap-1 rounded-lg bg-white px-5 py-1'>
+              <div className='flex h-[30px] w-[30px] items-center justify-center'>
+                <Svg.LinkedIn className='size-full fill-black' />
+              </div>
+              <p className='text-[20px] font-bold text-black'>Connect with me</p>
             </div>
           </Link>
         </li>
