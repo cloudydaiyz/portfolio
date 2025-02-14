@@ -27,7 +27,7 @@ export default function Header() {
         </Link>
       </h2>
       <nav>
-        <ul className='flex gap-5'>
+        <ul className='z-[110] flex gap-5'>
           <li>
             <Link href='#about-me' target='_self' className={aboutMeCls}>
               About Me
@@ -43,6 +43,34 @@ export default function Header() {
               Contact
             </Link>
           </li>
+        </ul>
+      </nav>
+      <nav className='highlight-border-dark absolute left-0 top-0 z-[105] hidden w-full border-b-2 bg-white backdrop-blur-md'>
+        <ul className='flex flex-col items-center'>
+          <Link
+            href='#about-me'
+            target='_self'
+            className='w-full py-4 text-center text-[#888888] hover:bg-[#EEEEEE] hover:text-black'
+          >
+            <li>About Me</li>
+          </Link>
+          <Link
+            href='#projects'
+            target='_self'
+            className='w-full py-4 text-center text-[#888888] hover:bg-[#EEEEEE] hover:text-black'
+          >
+            <li>Projects</li>
+          </Link>
+          <Link
+            href='#contact'
+            target='_self'
+            className='w-full py-4 text-center text-[#888888] hover:bg-[#EEEEEE] hover:text-black'
+          >
+            <li>Contact</li>
+          </Link>
+          <button className='w-full py-4 text-center text-[#888888] hover:bg-[#EEEEEE] hover:text-black'>
+            <li>Close</li>
+          </button>
         </ul>
       </nav>
     </header>

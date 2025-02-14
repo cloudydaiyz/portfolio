@@ -10,7 +10,7 @@
 
 @layer components {
   .glow-lg {
-    filter: drop-shadow(0 0 30px #484848);
+    filter: drop-shadow(0 0 40px #484848);
   }
   
   .glow {
@@ -36,7 +36,11 @@
   .highlight-border {
     border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #FFFFFF 50%, rgba(0, 0, 0, 0) 100%) 1;
     border-style: solid;
-    /* border-top-width: 1px; */
+  }
+
+  .highlight-border-dark {
+    border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #000000 50%, rgba(0, 0, 0, 0) 100%) 1;
+    border-style: solid;
   }
 
   .proj-link {
