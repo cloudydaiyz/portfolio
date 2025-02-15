@@ -79,7 +79,7 @@ export default function Hero() {
               <Heading>ABOUT ME</Heading>
             </div>
             <p className='text-center text-base leading-[1.1] sm:text-[20px]'>
-              I am a full stack developer with a passion for web development, the cloud, and making modern software
+              I am a full stack engineer with a passion for web development, the cloud, and making modern software
               applications with a great user experience. On a journey of constant learning, I always aspire to find new
               ways to make my code robust, scalable, and easily maintainable.
             </p>
