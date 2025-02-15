@@ -23,6 +23,24 @@ const techStackData: TechSkillData[] = [
   { title: 'AWS', asset: <Svg.Aws className='size-full fill-current' /> },
 ];
 
+export function MiniTechStack({ className }: { className?: string }) {
+  const skills = techStackData.map(skill => (
+    <span
+      key={skill.title}
+      className='flex flex-col items-center self-center text-[#888888] transition-all duration-300 hover:scale-110 hover:text-white'
+    >
+      <div className='mb-2 h-[52px] w-[52px]'>{skill.asset}</div>
+      <label className='text-base'>{skill.title}</label>
+    </span>
+  ));
+
+  return (
+    <div className={`${className} min-w-[300px] basis-[300px] flex-col items-center`}>
+      <div className='flex max-w-[calc(80px*6+4rem*6)] flex-wrap justify-center gap-x-8 gap-y-4'>{skills}</div>
+    </div>
+  );
+}
+
 export default function TechStack() {
   const headerNav = useHeaderNavContext();
   const { ref, inView } = useInView({
@@ -45,7 +63,7 @@ export default function TechStack() {
   ));
 
   return (
-    <section ref={ref} id='tech-stack' className='flex flex-col items-center px-10 py-10 sm:py-20 md:px-32'>
+    <section ref={ref} id='tech-stack' className='flex flex-col items-center px-10 py-10 sm:py-20 md:px-32 2xl:hidden'>
       <Heading className='mb-10'>TECH STACK</Heading>
       <div className='flex max-w-[calc(80px*6+4rem*6)] flex-wrap justify-center gap-x-16 gap-y-4'>{skills}</div>
     </section>

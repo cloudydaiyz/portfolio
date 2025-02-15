@@ -7,6 +7,7 @@ import Heading from '@/components/Heading';
 import * as Svg from '@/components/svg';
 import { useInView } from 'react-intersection-observer';
 import { useHeaderNavContext } from '@/hooks/header';
+import { MiniTechStack } from './TechStack';
 
 function AboutBadge({ children }: { children: React.ReactNode }) {
   return (
@@ -58,13 +59,13 @@ export default function Hero() {
         </nav>
       </div>
       <div className='flex flex-grow flex-col items-center sm:mt-8 md:mt-0'>
-        <h1 className='mb-8 mt-4 flex flex-col items-center font-[family-name:--font-oswald] leading-none tracking-tighter md:mt-8 lg:mb-20 lg:mt-10'>
+        <h1 className='mb-8 mt-4 flex flex-col items-center font-[family-name:--font-oswald] leading-none tracking-tighter md:mt-8 lg:mb-20 lg:mt-10 2xl:mb-12'>
           <span className='text-[30px] sm:text-[40px] lg:text-[50px]'>Hello, I am</span>
           <span className='hover:glow-lg glow bg-gradient-to-b from-[#FFFFFF] to-[#E8D2AA] bg-clip-text text-center text-[50px] font-bold text-transparent transition-all duration-500 sm:text-[75px] lg:text-[100px]'>
             KYLAN DUNCAN
           </span>
         </h1>
-        <div className='mb-8 flex flex-col items-center justify-center gap-8 md:flex-row lg:mb-20 lg:gap-32'>
+        <div className='mb-8 flex flex-col items-center justify-center gap-8 md:flex-row lg:mb-20 lg:gap-32 2xl:mb-12 2xl:gap-12'>
           <Image
             src={headshot}
             alt='My headshot'
@@ -91,6 +92,7 @@ export default function Hero() {
               CONTACT ME
             </Link>
           </div>
+          <MiniTechStack className='hidden 2xl:flex' />
         </div>
         <ul className='flex flex-wrap justify-center gap-4'>
           <AboutBadge>

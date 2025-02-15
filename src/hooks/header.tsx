@@ -1,7 +1,7 @@
 import { useContext, createContext, useState } from 'react';
 
 export function useHeaderNav() {
-  const [heroVisible, setHeroVisible] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(true);
   const [techStackVisible, setTechStackVisible] = useState(false);
   const [projectsVisible, setProjectsVisible] = useState(false);
   const [contactMeVisible, setContactMeVisible] = useState(false);

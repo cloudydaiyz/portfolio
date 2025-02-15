@@ -1,5 +1,5 @@
 <p align="center">
-<img alt="App logo (partially cloudy)" width="200" height="200" src="./public/icon.svg" />
+<img alt="App logo (partially cloudy)" width="200" height="200" src="src/app/icon.svg" />
 </p>
 
 <h1 align="center">
