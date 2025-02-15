@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang='en' className='custom-scroll'>
       <body
-        className={`bg-[#1C1F28] text-white ${pathwayExtreme.variable} ${oswald.variable} font-[family-name:--font-pathway-extreme] antialiased`}
+        className={`flex min-h-screen flex-col bg-[#1C1F28] text-white ${pathwayExtreme.variable} ${oswald.variable} font-[family-name:--font-pathway-extreme] antialiased`}
       >
         {children}
       </body>

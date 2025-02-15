@@ -29,17 +29,17 @@ export default function Header() {
       <nav>
         <ul className='z-[110] flex gap-5'>
           <li>
-            <Link href='#about-me' target='_self' className={aboutMeCls}>
+            <Link href='/#about-me' target='_self' className={aboutMeCls}>
               About Me
             </Link>
           </li>
           <li>
-            <Link href='#projects' target='_self' className={projectsCls}>
+            <Link href='/#projects' target='_self' className={projectsCls}>
               Projects
             </Link>
           </li>
           <li>
-            <Link href='#contact' target='_self' className={contactCls}>
+            <Link href='/#contact' target='_self' className={contactCls}>
               Contact
             </Link>
           </li>
