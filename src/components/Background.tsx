@@ -15,10 +15,11 @@ export default function Background({ top }: BackgroundProps) {
   let offset = 'top-0';
   if (!top) {
     gradientDir = 'bg-gradient-to-t';
-    offset = 'top-[-120vh]';
+    // offset = 'top-[-120vh]';
+    offset = '-translate-y-full';
   }
   return (
-    <div className={`${offset} absolute z-[-10] h-[120vh] w-screen bg-[url(/bg-pattern.svg)] bg-repeat`}>
+    <div className={`${offset} absolute z-[-10] h-[120vh] max-h-[1200px] w-screen bg-[url(/bg-pattern.svg)] bg-repeat`}>
       <div className={`${gradientDir} h-full w-full from-black/0 via-black/30 to-[#1C1F28]`}></div>
     </div>
   );

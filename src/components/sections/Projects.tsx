@@ -116,18 +116,18 @@ function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: Projec
   const sltc = selectedLinkTooltipClasses.join(' ');
 
   return (
-    <article className='lifted mb-10 flex gap-20 rounded-[64px] bg-[#101217] px-32 py-20 even:flex-row-reverse'>
+    <article className='lifted mb-10 flex w-fit max-w-full flex-col items-center gap-8 rounded-[32px] bg-[#101217] px-8 py-8 md:flex-row md:rounded-[64px] md:even:flex-row-reverse xl:gap-20 xl:px-32 xl:py-20'>
       <div>
-        <div className='mb-4 w-[500px]'>
+        <div className='mb-4 max-w-[500px] flex-grow'>
           <Image src={data.img} alt={data.title} className='rounded-2xl' />
         </div>
-        <ul className='flex justify-center gap-4'>{techUsed}</ul>
+        <ul className='flex flex-wrap justify-center gap-4'>{techUsed}</ul>
       </div>
-      <div className='flex w-[500px] max-w-[500px] flex-col items-center justify-center gap-2 text-center'>
+      <div className='flex w-[500px] max-w-full flex-col items-center justify-center gap-2 text-center'>
         <h3 className='relative z-10 font-[family-name:--font-oswald] text-[30px] font-bold leading-none tracking-tight'>
           {data.title}
         </h3>
-        <p className='mb-10'>{data.description}</p>
+        <p className='mb-4 md:mb-10'>{data.description}</p>
         <label className={sllc}>{selectedLinkLabel}</label>
         <p className={sltc}>Click again to visit the page.</p>
         <div className='flex gap-4'>{links}</div>
@@ -171,9 +171,13 @@ export default function Projects() {
   ));
 
   return (
-    <section ref={ref} id='projects' className='flex max-w-[100vw] flex-col items-center px-32 pt-20'>
+    <section
+      ref={ref}
+      id='projects'
+      className='flex w-fit min-w-full max-w-[100vw] flex-col items-center px-10 pt-10 sm:pt-20 2xl:px-32'
+    >
       <Heading className='mb-10'>PROJECTS</Heading>
-      <div className='flex flex-col items-center'>{cards}</div>
+      <div className='flex w-full flex-col items-center'>{cards}</div>
     </section>
   );
 }

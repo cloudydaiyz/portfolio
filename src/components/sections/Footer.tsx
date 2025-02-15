@@ -3,11 +3,13 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className='highlight-border border-t-[1px] bg-black'>
-      <div className='flex justify-between px-24 pb-12 pt-4'>
-        <p className='font-[family-name:--font-oswald] text-lg'>Copyright © 2025 Kylan Duncan. All rights reserved.</p>
-        <div className='flex gap-24'>
+      <div className='flex flex-col justify-between gap-8 px-10 pb-12 pt-4 sm:flex-row lg:px-24'>
+        <p className='text-md text-center font-[family-name:--font-oswald] lg:text-lg'>
+          Copyright © 2025 Kylan Duncan. All rights reserved.
+        </p>
+        <div className='flex justify-center gap-12 text-sm md:gap-24'>
           <div className='flex flex-col gap-2'>
-            <label className='font-[family-name:--font-oswald] text-lg'>Explore</label>
+            <label className='text-md font-[family-name:--font-oswald] lg:text-lg'>Explore</label>
             <nav>
               <ul>
                 <li>
@@ -28,7 +30,7 @@ export default function Footer() {
             </nav>
           </div>
           <div className='flex flex-col gap-2'>
-            <label className='font-[family-name:--font-oswald] text-lg'>Socials</label>
+            <label className='text-md font-[family-name:--font-oswald] lg:text-lg'>Socials</label>
             <nav>
               <ul>
                 <li>

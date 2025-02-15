@@ -45,7 +45,7 @@ export default function TechStack() {
   ));
 
   return (
-    <section ref={ref} id='tech-stack' className='flex flex-col items-center px-32 py-20'>
+    <section ref={ref} id='tech-stack' className='flex flex-col items-center px-10 py-10 sm:py-20 md:px-32'>
       <Heading className='mb-10'>TECH STACK</Heading>
       <div className='flex max-w-[calc(80px*6+4rem*6)] flex-wrap justify-center gap-x-16 gap-y-4'>{skills}</div>
     </section>

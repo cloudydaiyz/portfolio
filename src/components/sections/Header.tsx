@@ -4,8 +4,8 @@ import Link from 'next/link';
 export default function Header() {
   const headerNav = useHeaderNavContext();
 
-  const hiddenNavCls = 'text-[#969696] hover:text-white';
-  const visibleNavCls = `text-white`;
+  const hiddenNavCls = 'text-[#969696] hover:text-white whitespace-nowrap';
+  const visibleNavCls = 'text-white whitespace-nowrap';
 
   let aboutMeCls = hiddenNavCls;
   let projectsCls = hiddenNavCls;
@@ -19,10 +19,10 @@ export default function Header() {
 
   return (
     <header
-      className={`${headerPos} highlight-border fixed z-[100] flex w-full items-center justify-between border-b-[1px] bg-gradient-to-t from-black/50 to-black px-32 py-2 font-[family-name:--font-oswald] text-[18px] backdrop-blur-md transition-all duration-300`}
+      className={`${headerPos} highlight-border fixed z-[100] flex w-full items-center justify-center border-b-[1px] bg-gradient-to-t from-black/50 to-black px-32 py-2 font-[family-name:--font-oswald] text-[18px] backdrop-blur-md transition-all duration-300 lg:justify-between`}
     >
       <h2 className='text-[20px]'>
-        <Link href='/' target='_self'>
+        <Link href='/' target='_self' className='hidden lg:inline'>
           cloudydaiyz
         </Link>
       </h2>
