@@ -1,6 +1,6 @@
 name: Lint Codebase
 
-on: [push, pull-request]
+on: [push, pull_request]
 
 jobs:
   main:
