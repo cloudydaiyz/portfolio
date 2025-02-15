@@ -1,14 +1,11 @@
-'use client';
-
 import Footer from '@/components/sections/Footer';
 import Background from '@/components/Background';
-import { HeaderNavProvider } from '@/hooks/header';
 import Link from 'next/link';
 import Heading from '@/components/Heading';
 
 export default function Home() {
   return (
-    <HeaderNavProvider>
+    <>
       <div className='relative'>
         <Background top />
       </div>
@@ -49,6 +46,6 @@ export default function Home() {
       <div className='relative'>
         <Footer />
       </div>
-    </HeaderNavProvider>
+    </>
   );
 }
