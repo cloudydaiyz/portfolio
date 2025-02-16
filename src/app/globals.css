@@ -56,7 +56,6 @@
   }
 
   .proj-link.selected {
-    filter: drop-shadow(0 0 8px #484848);
     scale: 1.15;
   }
 

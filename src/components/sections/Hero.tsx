@@ -30,7 +30,7 @@ export default function Hero() {
     <section
       ref={ref}
       id='about-me'
-      className='flex h-screen max-h-[1000px] min-h-fit w-screen max-w-screen-2xl flex-col px-10 md:px-32'
+      className='flex h-screen max-h-[1000px] min-h-fit w-screen max-w-screen-2xl flex-col px-10 md:mb-20 md:px-32'
     >
       <div className='flex h-[80px] items-center justify-center font-[family-name:--font-oswald] sm:justify-between'>
         <h2 className='hidden text-[28px] sm:block'>
@@ -58,7 +58,7 @@ export default function Hero() {
           </ul>
         </nav>
       </div>
-      <div className='flex flex-grow flex-col items-center sm:mt-8 md:mt-0'>
+      <div className='flex flex-grow flex-col items-center justify-center md:justify-start'>
         <h1 className='mb-8 mt-4 flex flex-col items-center font-[family-name:--font-oswald] leading-none tracking-tighter md:mt-8 lg:mb-20 lg:mt-10 2xl:mb-12'>
           <span className='text-[30px] sm:text-[40px] lg:text-[50px]'>Hello, I am</span>
           <span className='hover:glow-lg glow bg-gradient-to-b from-[#FFFFFF] to-[#E8D2AA] bg-clip-text text-center text-[50px] font-bold text-transparent transition-all duration-500 sm:text-[75px] lg:text-[100px]'>

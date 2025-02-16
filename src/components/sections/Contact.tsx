@@ -19,10 +19,7 @@ export default function Contact() {
     <section ref={ref} id='contact' className='flex max-w-[100vw] flex-col items-center px-10 py-[200px] md:px-32'>
       <Heading className='mb-10'>GET IN TOUCH</Heading>
       <p className='mb-10 text-center text-[20px]'>
-        Want to get in touch?
-        <br />
-        The quickest way to get in contact with me is through email or setting up a meeting. I&apos;m always open to
-        discussing new opportunities!
+        Want to get in touch? I&apos;m always open to discussing new opportunities!
       </p>
       <ul className='flex flex-col gap-4'>
         {/* foreach contact method */}
