@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className='highlight-border border-t-[1px] bg-black'>
-      <div className='flex flex-col justify-between gap-8 px-10 pb-12 pt-4 sm:flex-row lg:px-24'>
+      <div className='flex flex-col-reverse justify-between gap-8 px-10 pb-4 pt-4 sm:flex-row sm:pb-12 lg:px-24'>
         <p className='text-md text-center font-[family-name:--font-oswald] lg:text-lg'>
           Copyright © 2025 Kylan Duncan. All rights reserved.
         </p>

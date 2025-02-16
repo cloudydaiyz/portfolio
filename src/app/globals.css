@@ -56,7 +56,6 @@
   }
 
   .proj-link.selected {
-    filter: drop-shadow(0 0 8px #484848);
     scale: 1.15;
   }
 
@@ -73,8 +72,37 @@
   .custom-scroll {
     scrollbar-color: #E8D2AA #464646;
   }
+
+  .fade-in-anim {
+    animation: 1.5s fade-in both;
+  }
+
+  .anim-delay-1 {
+    animation-delay: 300ms;
+  }
+
+  .anim-delay-2 {
+    animation-delay: 600ms;
+  }
+
+  .anim-delay-3 {
+    animation-delay: 900ms;
+  }
+
+  .anim-delay-4 {
+    animation-delay: 1200ms;
+  }
+
+  .paused {
+    animation-play-state: paused;
+  }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@keyframes fade-in {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }

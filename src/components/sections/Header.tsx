@@ -1,8 +1,14 @@
 import { useHeaderNavContext } from '@/hooks/header';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
   const headerNav = useHeaderNavContext();
+  const [paused, setPaused] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setPaused(false), 500);
+  });
 
   const hiddenNavCls = 'text-[#969696] hover:text-white whitespace-nowrap';
   const visibleNavCls = 'text-white whitespace-nowrap';
@@ -15,7 +21,7 @@ export default function Header() {
   else if (headerNav.projectsVisible) projectsCls = visibleNavCls;
   else if (headerNav.contactMeVisible) contactCls = visibleNavCls;
 
-  const headerPos = headerNav.heroVisible ? 'top-[-4rem]' : 'top-0';
+  const headerPos = paused || headerNav.heroVisible ? 'top-[-4rem]' : 'top-0';
 
   return (
     <header
