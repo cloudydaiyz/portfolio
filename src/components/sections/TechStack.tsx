@@ -1,5 +1,6 @@
 import Heading from '@/components/Heading';
 import * as Svg from '@/components/svg';
+import { useEnterAnim } from '@/hooks/anim';
 import { useHeaderNavContext } from '@/hooks/header';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
@@ -43,10 +44,10 @@ export function MiniTechStack({ className }: { className?: string }) {
 
 export default function TechStack() {
   const headerNav = useHeaderNavContext();
-  const { ref, inView } = useInView({
-    /* Optional options */
-    threshold: 0.5,
-  });
+
+  const { ref, inView } = useInView({ threshold: 0.5 });
+  const enter1 = useEnterAnim();
+  const enter2 = useEnterAnim();
 
   useEffect(() => {
     headerNav.setTechStackVisible(inView);
@@ -68,8 +69,15 @@ export default function TechStack() {
       id='tech-stack'
       className='to-black-0 flex w-screen max-w-screen-2xl flex-col items-center bg-gradient-to-r from-black/0 via-black/20 px-10 py-10 sm:py-20 md:px-32 2xl:hidden'
     >
-      <Heading className='mb-10'>TECH STACK</Heading>
-      <div className='flex max-w-[calc(80px*6+4rem*6)] flex-wrap justify-center gap-x-16 gap-y-4'>{skills}</div>
+      <Heading ref={enter1.ref} className={`${enter1.animClasses} mb-10`}>
+        TECH STACK
+      </Heading>
+      <div
+        ref={enter2.ref}
+        className={`${enter2.animClasses} flex max-w-[calc(80px*6+4rem*6)] flex-wrap justify-center gap-x-16 gap-y-4`}
+      >
+        {skills}
+      </div>
     </section>
   );
 }

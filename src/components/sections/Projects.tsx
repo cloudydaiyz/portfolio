@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useEffect, useReducer } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useHeaderNavContext } from '@/hooks/header';
+import { useEnterAnim } from '@/hooks/anim';
 
 /*
  * Time in seconds selected link can be idle before resetting.
@@ -50,6 +51,8 @@ const selectedLinkLabels: Record<LinkType, string> = {
 };
 
 function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: ProjectCardProps) {
+  const enter1 = useEnterAnim();
+
   const techUsed = data.techUsed.map(skill => (
     <li key={skill} className='gap-1 rounded-lg bg-white bg-opacity-10 px-3 text-base'>
       {skill}
@@ -116,7 +119,10 @@ function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: Projec
   const sltc = selectedLinkTooltipClasses.join(' ');
 
   return (
-    <article className='lifted mb-10 flex w-fit max-w-full flex-col items-center gap-8 rounded-[32px] bg-[#101217] px-8 py-8 md:flex-row md:rounded-[64px] md:even:flex-row-reverse xl:gap-20 xl:px-32 xl:py-20'>
+    <article
+      ref={enter1.ref}
+      className={`${enter1.animClasses} lifted mb-10 flex w-fit max-w-full flex-col items-center gap-8 rounded-[32px] bg-[#101217] px-8 py-8 md:flex-row md:rounded-[64px] md:even:flex-row-reverse xl:gap-20 xl:px-32 xl:py-20`}
+    >
       <div>
         <div className='mb-4 max-w-[500px] flex-grow'>
           <Image width={1200} height={630} src={data.img} alt={data.title} className='rounded-2xl' />
@@ -139,10 +145,9 @@ function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: Projec
 export default function Projects() {
   const [state, dispatch] = useReducer(updateSelectedLink, undefined);
   const headerNav = useHeaderNavContext();
-  const { ref, inView } = useInView({
-    /* Optional options */
-    threshold: 0.3,
-  });
+
+  const { ref, inView } = useInView({ threshold: 0.3 });
+  const enter1 = useEnterAnim();
 
   useEffect(() => {
     headerNav.setProjectsVisible(inView);
@@ -176,7 +181,9 @@ export default function Projects() {
       id='projects'
       className='flex w-fit min-w-full max-w-[100vw] flex-col items-center px-10 pt-10 sm:pt-20 2xl:px-32'
     >
-      <Heading className='mb-10'>PROJECTS</Heading>
+      <Heading ref={enter1.ref} className={`${enter1.animClasses} mb-10`}>
+        PROJECTS
+      </Heading>
       <div className='flex w-full flex-col items-center'>{cards}</div>
     </section>
   );

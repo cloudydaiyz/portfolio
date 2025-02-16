@@ -6,6 +6,8 @@ export function useHeaderNav() {
   const [projectsVisible, setProjectsVisible] = useState(false);
   const [contactMeVisible, setContactMeVisible] = useState(false);
 
+  console.log('header nav context:', heroVisible, techStackVisible, projectsVisible, contactMeVisible);
+
   return {
     heroVisible,
     setHeroVisible,
