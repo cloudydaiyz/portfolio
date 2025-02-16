@@ -67,7 +67,7 @@ export default function TechStack() {
     <section
       ref={ref}
       id='tech-stack'
-      className='to-black-0 flex w-screen max-w-screen-2xl flex-col items-center bg-gradient-to-r from-black/0 via-black/20 px-10 py-10 sm:py-20 md:px-32 2xl:hidden'
+      className='to-black-15 flex w-screen max-w-screen-2xl flex-col items-center bg-gradient-to-r from-black/0 from-[-20%] via-black/25 via-50% to-[120%] px-10 py-10 sm:py-20 md:px-32 2xl:hidden'
     >
       <Heading ref={enter1.ref} className={`${enter1.animClasses} mb-10`}>
         TECH STACK
