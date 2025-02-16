@@ -100,7 +100,7 @@ export default function Hero() {
               CONTACT ME
             </Link>
           </div>
-          <MiniTechStack className='hidden 2xl:flex' />
+          <MiniTechStack className={`${animPaused} fade-in-anim anim-delay-4 hidden 2xl:flex`} />
         </div>
         <ul className={`${animPaused} fade-in-anim anim-delay-4 flex flex-wrap justify-center gap-4`}>
           <AboutBadge>
