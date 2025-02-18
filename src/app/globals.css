@@ -77,20 +77,27 @@
     animation: 1.5s fade-in both;
   }
 
+  .fade-in-expand-anim {
+    animation: 1.5s fade-in-expand both;
+  }
+
   .anim-delay-1 {
     animation-delay: 300ms;
   }
 
   .anim-delay-2 {
-    animation-delay: 600ms;
-  }
-
-  .anim-delay-3 {
+    /* animation-delay: 600ms; */
     animation-delay: 900ms;
   }
 
-  .anim-delay-4 {
+  .anim-delay-3 {
+    /* animation-delay: 900ms; */
     animation-delay: 1200ms;
+  }
+
+  .anim-delay-4 {
+    /* animation-delay: 1200ms; */
+    animation-delay: 1500ms;
   }
 
   .paused {
@@ -103,6 +110,11 @@ html {
 }
 
 @keyframes fade-in {
-  0% { transform: translateY(20px); opacity: 0; }
+  0% { transform: translateY(16px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in-expand {
+  0% { transform: translateY(10px) scale(0.9); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
 }

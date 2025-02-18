@@ -13,7 +13,6 @@ export default function Contact() {
   const enter1 = useEnterAnim();
   const enter2 = useEnterAnim();
   const enter3 = useEnterAnim();
-  const enter4 = useEnterAnim();
 
   useEffect(() => {
     headerNav.setContactMeVisible(inView);
@@ -24,12 +23,9 @@ export default function Contact() {
       <Heading ref={enter1.ref} className={`${enter1.animClasses} mb-10`}>
         GET IN TOUCH
       </Heading>
-      <p ref={enter2.ref} className={`${enter2.animClasses} mb-10 text-center text-[20px]`}>
-        Want to get in touch? I&apos;m always open to discussing new opportunities!
-      </p>
       <ul className='flex flex-col gap-4'>
         {/* foreach contact method */}
-        <li ref={enter3.ref} className={`${enter3.animClasses} flex items-center justify-center`}>
+        <li ref={enter2.ref} className={`${enter2.animClasses} flex items-center justify-center`}>
           <Link href='mailto:kyland03.biz@gmail.com'>
             <div className='hover:glow-sm lifted-sm flex items-center justify-center gap-1 rounded-lg bg-white px-5 py-1 transition-all duration-300 hover:scale-105'>
               <div className='relative top-[1px] flex h-[30px] w-[30px] items-center justify-center'>
@@ -41,7 +37,7 @@ export default function Contact() {
             </div>
           </Link>
         </li>
-        <li ref={enter4.ref} className={`${enter4.animClasses} flex items-center justify-center`}>
+        <li ref={enter3.ref} className={`${enter3.animClasses} flex items-center justify-center`}>
           <Link href='https://linkedin.com/in/kylan-duncan' target='_blank'>
             <div className='hover:glow-sm lifted-sm flex items-center justify-center gap-1 rounded-lg bg-white px-5 py-1 transition-all duration-300 hover:scale-105'>
               <div className='relative top-[1px] flex h-[30px] w-[30px] items-center justify-center'>
