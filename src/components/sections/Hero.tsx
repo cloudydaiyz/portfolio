@@ -66,7 +66,7 @@ export default function Hero() {
         <h1 className='relative mb-8 mt-8 flex flex-col items-center font-[family-name:--font-oswald] leading-none tracking-tighter lg:mb-20 lg:mt-10 2xl:mb-12'>
           <span className='text-[30px] sm:text-[40px] lg:text-[50px]'>Hello, I am</span>
           <span
-            className={`${animPaused} fade-in-anim anim-delay-1 hover:glow-lg glow bg-gradient-to-b from-[#FFFFFF] to-[#E8D2AA] bg-clip-text text-center text-[50px] font-bold text-transparent transition-all duration-500 sm:text-[75px] lg:text-[100px]`}
+            className={`${animPaused} fade-in-expand-anim anim-delay-1 hover:glow-lg glow bg-gradient-to-b from-[#FFFFFF] to-[#E8D2AA] bg-clip-text text-center text-[60px] font-bold text-transparent transition-all duration-500 sm:text-[75px] lg:text-[100px]`}
           >
             KYLAN DUNCAN
           </span>

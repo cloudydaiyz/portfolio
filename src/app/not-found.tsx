@@ -37,8 +37,8 @@ export default function Home() {
           </nav>
         </div>
         <div className='flex flex-grow flex-col items-center justify-center gap-4 px-10 text-center'>
-          <Heading>PAGE NOT FOUND</Heading>
-          <p className='text-xl'>
+          <Heading className=''>PAGE NOT FOUND</Heading>
+          <p className='fade-in-anim anim-delay-1 text-xl'>
             You&apos;re in uncharted territory now! Not sure if this&apos;ll turn into something later.
           </p>
         </div>
