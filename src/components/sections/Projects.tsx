@@ -4,7 +4,7 @@ import * as Svg from '@/components/svg';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useReducer } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useHeaderNavContext } from '@/hooks/header';
 import { useEnterAnim } from '@/hooks/anim';
@@ -51,6 +51,7 @@ const selectedLinkLabels: Record<LinkType, string> = {
 };
 
 function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: ProjectCardProps) {
+  const [showPreview, setShowPreview] = useState(false);
   const enter1 = useEnterAnim();
 
   const techUsed = data.techUsed.map(skill => (
@@ -118,15 +119,29 @@ function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: Projec
   const sllc = selectedLinkLabelClasses.join(' ');
   const sltc = selectedLinkTooltipClasses.join(' ');
 
+  const ogClasses = 'rounded-2xl transition-all duration-1000 ' + (showPreview ? 'opacity-0' : 'opacity-1');
+  const previewClasses =
+    'absolute left-0 top-0 size-full rounded-2xl transition-all duration-1000 ' +
+    (showPreview ? 'opacity-1' : 'opacity-0');
+
   return (
     <article
       ref={enter1.ref}
       className={`${enter1.animClasses} lifted mb-10 flex w-fit max-w-full flex-col items-center gap-8 rounded-[32px] bg-[#101217] px-8 py-8 md:flex-row md:rounded-[64px] md:even:flex-row-reverse xl:gap-20 xl:px-32 xl:py-20`}
     >
       <div>
-        <div className='mb-4 max-w-[500px] flex-grow'>
-          <Image width={1200} height={630} src={data.img} alt={data.title} className='rounded-2xl' />
-        </div>
+        <button
+          disabled={!data.previewImg}
+          onClick={() => {
+            if (data.previewImg) setShowPreview(!showPreview);
+          }}
+          className='relative mb-4 max-w-[500px] flex-grow'
+        >
+          <Image width={1200} height={630} src={data.ogImg} alt={data.title} className={ogClasses} />
+          {data.previewImg && (
+            <Image width={1200} height={630} src={data.previewImg} alt={data.title} className={previewClasses} />
+          )}
+        </button>
         <ul className='flex flex-wrap justify-center gap-4'>{techUsed}</ul>
       </div>
       <div className='flex w-[500px] max-w-full flex-col items-center justify-center gap-2 text-center'>
