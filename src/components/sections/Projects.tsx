@@ -130,7 +130,13 @@ function ProjectCard({ data, selectedLink, onLinkClick, onLinkNavigate }: Projec
       className={`${enter1.animClasses} lifted mb-10 flex w-fit max-w-full flex-col items-center gap-8 rounded-[32px] bg-[#101217] px-8 py-8 md:flex-row md:rounded-[64px] md:even:flex-row-reverse xl:gap-20 xl:px-32 xl:py-20`}
     >
       <div>
-        <button disabled={!data.previewImg} onClick={() => { if(data.previewImg) setShowPreview(!showPreview) }} className='relative mb-4 max-w-[500px] flex-grow'>
+        <button
+          disabled={!data.previewImg}
+          onClick={() => {
+            if (data.previewImg) setShowPreview(!showPreview);
+          }}
+          className='relative mb-4 max-w-[500px] flex-grow'
+        >
           <Image width={1200} height={630} src={data.ogImg} alt={data.title} className={ogClasses} />
           {data.previewImg && (
             <Image width={1200} height={630} src={data.previewImg} alt={data.title} className={previewClasses} />
