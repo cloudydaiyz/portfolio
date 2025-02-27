@@ -86,8 +86,8 @@ export default function RootLayout({
       >
         {children}
       </body>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`} async />
-      <Script>
+      <Script id='gtag-1' src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`} async />
+      <Script id='gtag-1'>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
