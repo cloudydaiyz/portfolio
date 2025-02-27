@@ -1,6 +1,7 @@
 import './globals.css';
 
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import { pathwayExtreme, oswald } from '@/lib/fonts';
 
 export const metadata: Metadata = {
@@ -85,6 +86,16 @@ export default function RootLayout({
       >
         {children}
       </body>
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`} async />
+      <Script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.GA_ID}');
+        `}
+      </Script>
     </html>
   );
 }
