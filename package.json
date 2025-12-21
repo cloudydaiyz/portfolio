@@ -6,22 +6,22 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && prettier . --check",
+    "lint": "eslint . && prettier . --check",
     "fmt": "prettier . --write"
   },
   "dependencies": {
-    "next": "15.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next": "15.5.9",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-intersection-observer": "^9.15.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
+    "@eslint/eslintrc": "^3.3.3",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
     "eslint": "^9.20.1",
-    "eslint-config-next": "15.1.7",
+    "eslint-config-next": "15.5.9",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-node": "^11.1.0",
@@ -31,5 +31,11 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.2.7",
+      "@types/react-dom": "19.2.3"
+    }
   }
 }

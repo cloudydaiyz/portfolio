@@ -68,7 +68,7 @@
     fill: black;
   }
 
-  /* Small custom scroll, but generally do not do this for production websites */
+  /* Small custom scroll, but generally do not do this in production */
   .custom-scroll {
     scrollbar-color: #E8D2AA #464646;
   }

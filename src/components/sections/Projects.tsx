@@ -194,7 +194,7 @@ export default function Projects() {
     <section
       ref={ref}
       id='projects'
-      className='flex w-fit min-w-full max-w-[100vw] flex-col items-center px-10 pt-10 sm:pt-20 2xl:px-32'
+      className='flex w-full max-w-[100vw] flex-col items-center px-10 pt-10 sm:pt-20 2xl:px-32'
     >
       <Heading ref={enter1.ref} className={`${enter1.animClasses} mb-10`}>
         PROJECTS

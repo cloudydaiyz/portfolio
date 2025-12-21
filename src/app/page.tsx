@@ -16,7 +16,7 @@ export default function Home() {
         <Background top />
         <Header />
       </div>
-      <main className='flex w-[100vw] flex-col items-center'>
+      <main className='flex w-full flex-col items-center'>
         <Hero />
         <TechStack />
         <Projects />
