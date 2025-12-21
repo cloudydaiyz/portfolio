@@ -34,7 +34,7 @@ export default function Hero() {
     <section
       ref={ref}
       id='about-me'
-      className='mb-10 flex h-screen max-h-[1000px] min-h-fit w-screen max-w-screen-2xl flex-col px-10 md:mb-20 md:px-32'
+      className='mb-10 flex h-screen max-h-[1000px] min-h-fit w-full max-w-screen-2xl flex-col px-10 md:mb-20 md:px-32'
     >
       <div className='flex h-[80px] items-center justify-center font-[family-name:--font-oswald] sm:justify-between'>
         <h2 className='hidden text-[28px] sm:block'>
